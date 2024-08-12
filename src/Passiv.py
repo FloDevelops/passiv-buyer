@@ -34,10 +34,11 @@ def buy_passiv():
     page.fill('input[name="token"]', user['totp'].now())
     page.click('text=Submit')
     print('TOTP submitted')
-    page.wait_for_load_state('domcontentloaded')
+    sleep(10)
+    page.wait_for_url('https://app.passiv.com/dashboard', timeout=10)
     if page.url != 'https://app.passiv.com/dashboard':
       raise Exception('Failed to login')
-    sleep(10)
+    browser.close()
 
     accounts = page.query_selector_all('text=ALLOCATE')
     print(f'Found {len(accounts)} accounts to allocate')
