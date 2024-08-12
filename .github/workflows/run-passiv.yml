@@ -18,5 +18,5 @@ jobs:
         playwright install-deps
     - name: Buy Passiv
       run: |
-        python buy_passiv.py
+        python src/Passiv.py
     - run: echo "🍏 This job's status is ${{ job.status }}."
