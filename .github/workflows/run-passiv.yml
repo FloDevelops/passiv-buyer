@@ -1,6 +1,7 @@
 name: Run Passiv
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 20 * * 1-5'
 jobs:
