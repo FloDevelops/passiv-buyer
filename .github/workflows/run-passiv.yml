@@ -20,6 +20,10 @@ jobs:
         playwright install chromium
         playwright install-deps
     - name: Buy Passiv
+      env:
+        USER_EMAIL: ${{ secrets.USER_EMAIL }}
+        USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+        TOTP_SECRET: ${{ secrets.TOTP_SECRET }}
       run: |
         python src/Passiv.py
     - run: echo "🍏 This job's status is ${{ job.status }}."
