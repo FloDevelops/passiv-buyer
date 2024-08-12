@@ -52,3 +52,5 @@ def buy_passiv():
     sleep(10)
     browser.close()
 
+if __name__ == '__main__':
+  buy_passiv()
