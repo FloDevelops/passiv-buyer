@@ -38,7 +38,6 @@ def buy_passiv():
     page.wait_for_url('https://app.passiv.com/dashboard', timeout=10)
     if page.url != 'https://app.passiv.com/dashboard':
       raise Exception('Failed to login')
-    browser.close()
 
     accounts = page.query_selector_all('text=ALLOCATE')
     print(f'Found {len(accounts)} accounts to allocate')
