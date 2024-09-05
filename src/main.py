@@ -7,9 +7,9 @@ from Passiv import buy_passiv
 app = FastAPI()
 
 
-@app.get('/')
+@app.get("/")
 def read_root():
-  html_content = '''
+    html_content = """
     <html>
       <head>
         <title>Passiv buyer</title>
@@ -28,16 +28,11 @@ def read_root():
         </form>
       </body>
     </html>
-    '''
-  return HTMLResponse(content=html_content, status_code=200)
+    """
+    return HTMLResponse(content=html_content, status_code=200)
 
 
-# @app.get('/items/{item_id}')
-# def read_item(item_id: int, q: Union[str, None] = None):
-#   return {'item_id': item_id, 'q': q}
-
-
-@app.get('/passiv')
+@app.get("/passiv")
 def run_passiv():
-  buy_passiv()
-  return {'status': 'success'}
+    buy_passiv()
+    return {"status": "success"}
